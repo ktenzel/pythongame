@@ -15,7 +15,7 @@ def gold_room():
     else:
         dead("You greedy bastard!")
 
-def bear_room():
+def desert():
     print("There is a bear here.\nThe bear has a bundh of honey.\nThe fat bear is in fornt of another door. \nHow are you going to move the bear?")
     bear_moved = False
 
@@ -34,8 +34,8 @@ def bear_room():
         else:
             print("I got no idea what that means.")
 
-def cthulhu_room():
-    print("Here you see the great evil Cthulhu.")
+def hills():
+    print("Hills Here you see the great evil Cthulhu.")
     print("He, it, whatever startes at you and you go insane")
     print("Do you flee for your life or eat your head?")
 
@@ -48,22 +48,58 @@ def cthulhu_room():
     else:
         cthulhu_room()
 
+def ocean():
+    print("A vast ocean surounds you")
+    print("Build a boat or swim")
+
+    choice = input("> ")
+
+    if "boat" in choice:
+        boat()
+    elif "swim" in choice:
+        dead("the gret monsters of the deep find you.")
+    else:
+        dead("You have lost your way")
+
+def boat():
+    print("YOU sail for many days")
+    print("You find water ans shelter on an Island")
+    print("Search of food on the beach or in land")
+    
+    choice = input(">")
+
+    if choice == "land":
+        jungle()
+    elif choice == "beach":
+        beach()
+    else:
+        deadt("you have lost your sword")
+
+
+def jungle():
+    print()
+    print()
+    print()
+
+    
 def dead(why):
     print(why, "Good job!")
     exit(0)
 
 def start():
-    print("You are in a dark room.")
-    print("There is a door to your right and left.")
-    print("Which one do you take?")
+    print("It's dangerous to go alone, take this")
+    print("aquire swor")
+    print("leave the cave and go to the hills, ocean desert")
 
     choice = input(">")
 
-    if choice == "left":
-        bear_room()
-    elif choice == "right":
-        cthulhu_room()
+    if choice == "desert":
+        desert()
+    elif choice == "hills":
+        hills()
+    elif choice == "ocean":
+        ocean()
     else:
-        deadt("You stumble around the room until you starve.")
+        deadt("you have lost your sword")
 
 start()
