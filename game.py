@@ -74,14 +74,19 @@ def boat():
         beach()
     else:
         deadt("you have lost your sword")
-
-
+        
 def jungle():
-    print()
-    print()
-    print()
+    print("You enter a thick Jungle")
+    print("Should you swing from the trees")
+    print("Or stick to the ground")
+    if choice == "trees":
+        print("you swing from the trees and makeit to the hills")
+        hills()
+    elif choice == "ground":
+        beach("A large snake lowers from the trees and bites you.")
+    else:
+        deadt("you have lost your sword")
 
-    
 def dead(why):
     print(why, "Good job!")
     exit(0)
